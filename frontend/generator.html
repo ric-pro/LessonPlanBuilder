@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Lesson Plan Generator - UC MITS Program</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>AI Lesson Plan Generator</h1>
+                </div>
+                <p class="subtitle">University of Canberra - Master of Information Technology and Systems</p>
+                <div class="header-nav">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="#" onclick="logout()" class="nav-link">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-cogs"></i> Lesson Plan Configuration</h2>
+                    <p>Configure your lesson plan parameters to generate comprehensive educational content</p>
+                </div>
+
+                <form class="lesson-form" id="lessonForm">
+                    <div class="form-grid">
+                        <!-- Subject Selection -->
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-book"></i>
+                                Subject
+                            </label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="intro-it">Introduction to Information Technology</option>
+                                <option value="intro-data-science">Introduction to Data Science</option>
+                                <option value="intro-statistics">Introduction to Statistics</option>
+                            </select>
+                        </div>
+
+                        <!-- Focus Topic -->
+                        <div class="form-group">
+                            <label for="focusTopic">
+                                <i class="fas fa-bullseye"></i>
+                                Focus Topic
+                            </label>
+                            <input type="text" id="focusTopic" name="focusTopic" placeholder="e.g., Database Design Principles" required>
+                        </div>
+
+                        <!-- Bloom's Taxonomy Level -->
+                        <div class="form-group">
+                            <label for="bloomsLevel">
+                                <i class="fas fa-layer-group"></i>
+                                Bloom's Taxonomy Level
+                            </label>
+                            <select id="bloomsLevel" name="bloomsLevel" required>
+                                <option value="">Select cognitive level</option>
+                                <option value="remember">Remember - Recall facts and basic concepts</option>
+                                <option value="understand">Understand - Explain ideas or concepts</option>
+                                <option value="apply">Apply - Use information in new situations</option>
+                                <option value="analyze">Analyze - Draw connections among ideas</option>
+                                <option value="evaluate">Evaluate - Justify a stand or decision</option>
+                                <option value="create">Create - Produce new or original work</option>
+                            </select>
+                        </div>
+
+                        <!-- AQF Level -->
+                        <div class="form-group">
+                            <label for="aqfLevel">
+                                <i class="fas fa-certificate"></i>
+                                Required AQF Level
+                            </label>
+                            <select id="aqfLevel" name="aqfLevel" required>
+                                <option value="">Select AQF level</option>
+                                <option value="aqf9">AQF Level 9 - Master's Degree</option>
+                                <option value="aqf8">AQF Level 8 - Graduate Certificate/Diploma</option>
+                                <option value="aqf7">AQF Level 7 - Bachelor's Degree</option>
+                            </select>
+                        </div>
+
+                        <!-- Learning Duration -->
+                        <div class="form-group">
+                            <label for="duration">
+                                <i class="fas fa-clock"></i>
+                                Lesson Duration
+                            </label>
+                            <select id="duration" name="duration" required>
+                                <option value="">Select duration</option>
+                                <option value="60">1 Hour</option>
+                                <option value="90">1.5 Hours</option>
+                                <option value="120">2 Hours</option>
+                                <option value="150">2.5 Hours</option>
+                                <option value="180">3 Hours</option>
+                            </select>
+                        </div>
+
+                        <!-- Assessment Type -->
+                        <div class="form-group">
+                            <label for="assessmentType">
+                                <i class="fas fa-tasks"></i>
+                                Assessment Type
+                            </label>
+                            <select id="assessmentType" name="assessmentType" required>
+                                <option value="">Select assessment type</option>
+                                <option value="formative">Formative Assessment</option>
+                                <option value="summative">Summative Assessment</option>
+                                <option value="peer">Peer Assessment</option>
+                                <option value="self">Self Assessment</option>
+                                <option value="mixed">Mixed Assessment</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Additional Requirements -->
+                    <div class="form-group full-width">
+                        <label for="additionalRequirements">
+                            <i class="fas fa-plus-circle"></i>
+                            Additional Requirements (Optional)
+                        </label>
+                        <textarea id="additionalRequirements" name="additionalRequirements" 
+                                  placeholder="Specify any additional requirements, learning outcomes, or special considerations..."></textarea>
+                    </div>
+
+                    <!-- Generate Button -->
+                    <div class="form-actions">
+                        <button type="submit" class="generate-btn" id="generateBtn">
+                            <i class="fas fa-magic"></i>
+                            Generate Lesson Plan
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="preview-section" id="previewSection">
+                <div class="section-header">
+                    <h2><i class="fas fa-eye"></i> Generated Lesson Plan Preview</h2>
+                    <p>Your AI-generated lesson plan will appear here</p>
+                </div>
+
+                <div class="preview-content" id="previewContent">
+                    <div class="preview-placeholder">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>Ready to Generate</h3>
+                        <p>Fill out the form above and click "Generate Lesson Plan" to see your customized lesson plan here.</p>
+                    </div>
+                </div>
+
+                <!-- Export Options -->
+                <div class="export-options" id="exportOptions" style="display: none;">
+                    <h3><i class="fas fa-download"></i> Export Options</h3>
+                    <div class="export-buttons">
+                        <button class="export-btn pdf-btn" id="exportPdf">
+                            <i class="fas fa-file-pdf"></i>
+                            Export as PDF
+                        </button>
+                        <button class="export-btn word-btn" id="exportWord">
+                            <i class="fas fa-file-word"></i>
+                            Export as Word
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 University of Canberra - Faculty of Science and Technology</p>
+                <p>AI-Powered Lesson Plan Generation System for MITS Program</p>
+            </div>
+        </footer>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <h3>Generating Your Lesson Plan</h3>
+                <p>Please wait while our AI creates your customized lesson plan...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem('userLoggedIn');
+            window.location.href = 'index.html';
+        }
+
+        // Check if user is logged in
+        if (!localStorage.getItem('userLoggedIn')) {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
+
