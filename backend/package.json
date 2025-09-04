@@ -1,0 +1,56 @@
+{
+  "name": "lesson-plan-builder-backend",
+  "version": "1.0.0",
+  "description": "Backend API for LLM-Powered Lesson Plan Builder - University of Canberra MITS Program",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "setup:db": "node scripts/setup_database.js",
+    "embed:data": "node scripts/embed_data.js",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
+  },
+  "keywords": [
+    "lesson-plan",
+    "ai",
+    "education",
+    "rag",
+    "llm",
+    "university-of-canberra"
+  ],
+  "author": "University of Canberra - MITS Program",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "chromadb": "^1.7.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.10.0",
+    "helmet": "^7.0.0",
+    "joi": "^17.9.2",
+    "mammoth": "^1.6.0",
+    "moment": "^2.29.4",
+    "multer": "^1.4.5-lts.1",
+    "pdf-parse": "^1.1.1",
+    "uuid": "^9.0.0",
+    "winston": "^3.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.47.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.0.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "jest": "^29.6.2",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
