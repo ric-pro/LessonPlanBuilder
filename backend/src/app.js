@@ -2,7 +2,7 @@
  * Main Express Application for Lesson Plan Builder API
  * University of Canberra - Master of Information Technology and Systems Program
  */
-
+require('dotenv').config({ path: './env' });
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
