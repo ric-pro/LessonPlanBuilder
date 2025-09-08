@@ -128,3 +128,147 @@ Metadata: {
   "userAgent": "curl/8.7.1",
   "ip": "127.0.0.1"
 }
+2025-09-14 13:41:46 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 13:41:46 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 7417
+}
+2025-09-14 13:42:01 [INFO]: Incoming request
+Metadata: {
+  "method": "GET",
+  "url": "/api/health",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 13:42:01 [INFO]: Health check requested
+Metadata: {
+  "endpoint": "/health",
+  "status": "healthy",
+  "responseTime": 1
+}
+2025-09-14 13:42:01 [INFO]: HTTP 200 - GET /
+Metadata: {
+  "method": "GET",
+  "url": "/",
+  "statusCode": 200,
+  "duration": "2ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 13:42:15 [INFO]: Incoming request
+Metadata: {
+  "method": "GET",
+  "url": "/api/health/detailed",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 13:42:15 [INFO]: Detailed health check requested
+Metadata: {
+  "endpoint": "/health/detailed",
+  "status": "healthy",
+  "responseTime": 0,
+  "services": {
+    "chromadb": "unknown",
+    "huggingface": "unknown",
+    "filesystem": "healthy"
+  }
+}
+2025-09-14 13:42:15 [INFO]: HTTP 200 - GET /detailed
+Metadata: {
+  "method": "GET",
+  "url": "/detailed",
+  "statusCode": 200,
+  "duration": "0ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 13:42:22 [INFO]: Incoming request
+Metadata: {
+  "method": "GET",
+  "url": "/api/docs",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 13:42:22 [INFO]: HTTP 200 - GET /api/docs
+Metadata: {
+  "method": "GET",
+  "url": "/api/docs",
+  "statusCode": 200,
+  "duration": "1ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 13:42:45 [INFO]: Incoming request
+Metadata: {
+  "method": "POST",
+  "url": "/api/lesson/generate",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 13:42:45 [INFO]: Lesson plan generation requested
+Metadata: {
+  "subject": "intro-it",
+  "focusTopic": "Database Design Principles",
+  "bloomsLevel": "apply",
+  "aqfLevel": "aqf9",
+  "duration": 120,
+  "assessmentType": "formative",
+  "hasAdditionalRequirements": true
+}
+2025-09-14 13:42:45 [INFO]: Operation: lesson_plan_generated
+Metadata: {
+  "operation": "lesson_plan_generated",
+  "subject": "intro-it",
+  "focusTopic": "Database Design Principles",
+  "lessonId": "lesson_1757821365590",
+  "qualityScore": 95
+}
+2025-09-14 13:42:45 [INFO]: HTTP 200 - POST /generate
+Metadata: {
+  "method": "POST",
+  "url": "/generate",
+  "statusCode": 200,
+  "duration": "1ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 13:42:58 [INFO]: Incoming request
+Metadata: {
+  "method": "POST",
+  "url": "/api/lesson/generate",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 13:42:58 [WARN]: HTTP 400 - POST /generate
+Metadata: {
+  "method": "POST",
+  "url": "/generate",
+  "statusCode": 400,
+  "duration": "1ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 13:43:11 [INFO]: Incoming request
+Metadata: {
+  "method": "GET",
+  "url": "/api/health/ready",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 13:43:11 [INFO]: HTTP 200 - GET /ready
+Metadata: {
+  "method": "GET",
+  "url": "/ready",
+  "statusCode": 200,
+  "duration": "0ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
