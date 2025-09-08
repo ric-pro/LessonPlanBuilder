@@ -1,6 +1,6 @@
 /**
  * Document Processing Service for Lesson Plan Builder
- * Handles PDF and Word document text extraction and processing
+ * Handles PDF and Word document text extraction processing
  */
 
 const fs = require('fs');
