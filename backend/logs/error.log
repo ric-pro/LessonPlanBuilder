@@ -297,3 +297,95 @@ Metadata: {
   "error": "Collection not found for subject: intro-it",
   "responseTime": 7
 }
+2025-09-14 15:48:39 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async DatabaseSetup.initializeVectorDatabase (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:137:7)
+    at async DatabaseSetup.setup (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:38:7)
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:48:39 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:48:39 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:48:39 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:48:39 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:48:39 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:48:39 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:48:39 [ERROR]: Failed to generate embeddings
+Metadata: {
+  "error": "Request failed with status code 400",
+  "textCount": 1
+}
+2025-09-14 15:55:27 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async VectorDatabase.addDocument (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:169:9)
+    at async /Users/richupromod/Desktop/LessonPlanBuilder/backend/src/api/routes/documents.js:96:24
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:55:27 [ERROR]: Failed to add document to vector database
+Metadata: {
+  "documentId": "1be9760a-e37f-421f-9cc2-e83e0afdf518",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "processingTime": 8
+}
+2025-09-14 15:56:14 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async VectorDatabase.search (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:343:9)
+    at async /Users/richupromod/Desktop/LessonPlanBuilder/backend/src/api/routes/documents.js:367:27
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:56:14 [ERROR]: Vector search failed
+Metadata: {
+  "query": "database design principles",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "processingTime": 7
+}
+2025-09-14 15:56:14 [ERROR]: Document search failed
+Metadata: {
+  "query": "database design principles",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "responseTime": 7
+}
