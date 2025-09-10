@@ -26,7 +26,7 @@ class DatabaseSetup {
    */
   async setup() {
     try {
-      console.log('🚀 Starting database setup...\n');
+      console.log('Starting database setup...\n');
 
       // Validate configuration
       await this.validateConfiguration();
@@ -40,14 +40,14 @@ class DatabaseSetup {
       // Verify setup
       await this.verifySetup();
 
-      console.log('\n✅ Database setup completed successfully!');
+      console.log('\nDatabase setup completed successfully!');
       console.log('\nNext steps:');
       console.log('1. Upload unit outline documents using: POST /api/documents/upload');
       console.log('2. Test document search using: POST /api/documents/search');
       console.log('3. Check vector database health: GET /api/health/detailed\n');
 
     } catch (error) {
-      console.error('\n❌ Database setup failed:', error.message);
+      console.error('\n Database setup failed:', error.message);
       console.error('\nTroubleshooting:');
       console.error('1. Ensure ChromaDB is running (if using external instance)');
       console.error('2. Check your Hugging Face API key in .env file');
@@ -61,11 +61,11 @@ class DatabaseSetup {
    * Validate configuration
    */
   async validateConfiguration() {
-    console.log('📋 Validating configuration...');
+    console.log(' Validating configuration...');
 
     try {
       validateConfig();
-      console.log('   ✅ Configuration validation passed');
+      console.log('    Configuration validation passed');
     } catch (error) {
       throw new Error(`Configuration validation failed: ${error.message}`);
     }
@@ -74,7 +74,7 @@ class DatabaseSetup {
     if (!config.huggingface.apiKey || config.huggingface.apiKey === 'test_key_for_phase1') {
       throw new Error('Please set a valid HUGGINGFACE_API_KEY in your .env file');
     }
-    console.log('   ✅ Hugging Face API key configured');
+    console.log('    Hugging Face API key configured');
 
     // Check required directories
     const requiredDirs = ['data', 'data/uploads', 'data/processed', 'data/chroma_db', 'logs'];
@@ -85,7 +85,7 @@ class DatabaseSetup {
       }
     }
 
-    console.log('   ✅ Configuration validated\n');
+    console.log('    Configuration validated\n');
   }
 
   /**
