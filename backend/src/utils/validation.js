@@ -102,12 +102,66 @@ const lessonPlanGenerationSchema = Joi.object({
 const fileUploadSchema = Joi.object({
   subject: commonSchemas.subject,
   documentType: Joi.string()
-    .valid('unit-outline', 'curriculum-guide', 'assessment-rubric')
+    .valid('unit_outline', 'curriculum_guide', 'assessment_rubric', 'learning_resource')
+    .default('unit_outline')
+    .messages({
+      'any.only': 'Document type must be one of: unit_outline, curriculum_guide, assessment_rubric, learning_resource'
+    }),
+  description: Joi.string()
+    .max(500)
+    .trim()
+    .allow('')
+    .optional()
+    .messages({
+      'string.max': 'Description must not exceed 500 characters'
+    })
+});
+
+/**
+ * Document search validation schema
+ */
+const documentSearchSchema = Joi.object({
+  query: Joi.string()
+    .min(3)
+    .max(500)
+    .trim()
     .required()
     .messages({
-      'any.only': 'Document type must be one of: unit-outline, curriculum-guide, assessment-rubric',
-      'any.required': 'Document type is required'
-    })
+      'string.min': 'Search query must be at least 3 characters long',
+      'string.max': 'Search query must not exceed 500 characters',
+      'any.required': 'Search query is required'
+    }),
+  subject: commonSchemas.subject,
+  options: Joi.object({
+    limit: Joi.number()
+      .integer()
+      .min(1)
+      .max(50)
+      .default(10)
+      .messages({
+        'number.min': 'Limit must be at least 1',
+        'number.max': 'Limit must not exceed 50'
+      }),
+    threshold: Joi.number()
+      .min(0)
+      .max(1)
+      .default(0.7)
+      .messages({
+        'number.min': 'Threshold must be between 0 and 1',
+        'number.max': 'Threshold must be between 0 and 1'
+      }),
+    sections: Joi.array()
+      .items(Joi.string().valid(
+        'introduction', 'learningOutcomes', 'accreditation', 
+        'timetable', 'resources', 'assessment'
+      ))
+      .optional()
+      .messages({
+        'array.includes': 'Sections must be valid section names'
+      }),
+    includeMetadata: Joi.boolean()
+      .default(true)
+  }).optional().default({})
 });
 
 /**
@@ -206,10 +260,64 @@ const validationHelpers = {
       });
     }
 
+    // Check for dangerous filename patterns
+    const dangerousPatterns = [
+      /\.\./,  // Directory traversal
+      /[<>:"|?*]/,  // Invalid filename characters
+      /^(CON|PRN|AUX|NUL|COM[1-9]|LPT[1-9])$/i  // Windows reserved names
+    ];
+
+    if (dangerousPatterns.some(pattern => pattern.test(file.originalname))) {
+      errors.push({
+        field: 'file.name',
+        message: 'Filename contains invalid characters or patterns',
+        value: file.originalname
+      });
+    }
+
     return {
       isValid: errors.length === 0,
       errors: errors.length > 0 ? errors : null,
       data: errors.length === 0 ? file : null
+    };
+  },
+
+  /**
+   * Validate document ID format
+   * @param {string} documentId - Document identifier
+   * @returns {boolean} Whether document ID is valid
+   */
+  isValidDocumentId: (documentId) => {
+    // UUID v4 format validation
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+    return uuidRegex.test(documentId);
+  },
+
+  /**
+   * Validate and sanitize search query
+   * @param {string} query - Search query
+   * @returns {object} Validation result
+   */
+  validateSearchQuery: (query) => {
+    if (!query || typeof query !== 'string') {
+      return {
+        isValid: false,
+        error: 'Query must be a non-empty string'
+      };
+    }
+
+    const sanitized = validationHelpers.sanitizeText(query);
+    
+    if (sanitized.length < 3) {
+      return {
+        isValid: false,
+        error: 'Query must be at least 3 characters long after sanitization'
+      };
+    }
+
+    return {
+      isValid: true,
+      sanitized
     };
   },
 
@@ -283,6 +391,7 @@ module.exports = {
   schemas: {
     lessonPlanGeneration: lessonPlanGenerationSchema,
     fileUpload: fileUploadSchema,
+    documentSearch: documentSearchSchema,
     healthCheck: healthCheckSchema
   },
   helpers: validationHelpers,

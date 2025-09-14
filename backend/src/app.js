@@ -2,7 +2,7 @@
  * Main Express Application for Lesson Plan Builder API
  * University of Canberra - Master of Information Technology and Systems Program
  */
-require('dotenv').config({ path: './env' });
+
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -17,6 +17,7 @@ const logger = require('./utils/logger');
 // Import routes
 const healthRoutes = require('./api/routes/health');
 const lessonRoutes = require('./api/routes/lesson');
+const documentRoutes = require('./api/routes/documents');
 
 /**
  * Initialize Express application
@@ -157,6 +158,7 @@ app.use((req, res, next) => {
  */
 app.use('/api/health', healthRoutes);
 app.use('/api/lesson', lessonRoutes);
+app.use('/api/documents', documentRoutes);
 
 /**
  * Root endpoint
@@ -174,6 +176,8 @@ app.get('/', (req, res) => {
       endpoints: {
         health: '/api/health',
         lessonGeneration: '/api/lesson/generate',
+        documentUpload: '/api/documents/upload',
+        documentSearch: '/api/documents/search',
         documentation: '/api/docs'
       }
     }
@@ -202,6 +206,14 @@ app.get('/api/docs', (req, res) => {
           get: 'GET /lesson/:id',
           list: 'GET /lesson',
           delete: 'DELETE /lesson/:id'
+        },
+        documents: {
+          upload: 'POST /documents/upload',
+          list: 'GET /documents',
+          get: 'GET /documents/:id',
+          search: 'POST /documents/search',
+          delete: 'DELETE /documents/:id',
+          stats: 'GET /documents/stats'
         }
       },
       schemas: {
@@ -213,6 +225,22 @@ app.get('/api/docs', (req, res) => {
           duration: 'number (30-300 minutes)',
           assessmentType: 'string (formative, summative, peer, self, mixed)',
           additionalRequirements: 'string (optional, max 1000 chars)'
+        },
+        documentUpload: {
+          subject: 'string (intro-it, intro-data-science, intro-statistics)',
+          documentType: 'string (unit_outline, curriculum_guide, assessment_rubric, learning_resource)',
+          description: 'string (optional, max 500 chars)',
+          file: 'multipart/form-data (PDF, Word, or text file)'
+        },
+        documentSearch: {
+          query: 'string (3-500 chars)',
+          subject: 'string (intro-it, intro-data-science, intro-statistics)',
+          options: {
+            limit: 'number (1-50, default: 10)',
+            threshold: 'number (0-1, default: 0.7)',
+            sections: 'array (optional section filters)',
+            includeMetadata: 'boolean (default: true)'
+          }
         }
       }
     }
