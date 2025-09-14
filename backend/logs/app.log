@@ -272,3 +272,844 @@ Metadata: {
   "userAgent": "curl/8.7.1",
   "ip": "127.0.0.1"
 }
+2025-09-14 14:59:23 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 14:59:23 [INFO]: Created directory: /Users/richupromod/Desktop/LessonPlanBuilder/backend/data/uploads
+2025-09-14 14:59:23 [INFO]: Created directory: /Users/richupromod/Desktop/LessonPlanBuilder/backend/data/processed
+2025-09-14 14:59:23 [INFO]: Created directory: /Users/richupromod/Desktop/LessonPlanBuilder/backend/data/chroma_db
+2025-09-14 14:59:23 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 19728
+}
+2025-09-14 14:59:35 [INFO]: Incoming request
+Metadata: {
+  "method": "GET",
+  "url": "/api/health",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 14:59:35 [INFO]: Health check requested
+Metadata: {
+  "endpoint": "/health",
+  "status": "healthy",
+  "responseTime": 0
+}
+2025-09-14 14:59:35 [INFO]: HTTP 200 - GET /
+Metadata: {
+  "method": "GET",
+  "url": "/",
+  "statusCode": 200,
+  "duration": "2ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 15:01:47 [INFO]: Initializing vector database
+Metadata: {
+  "host": "localhost",
+  "port": 8000
+}
+2025-09-14 15:01:47 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async DatabaseSetup.initializeVectorDatabase (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:137:7)
+    at async DatabaseSetup.setup (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:38:7)
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:01:47 [WARN]: Using mock vector database for development
+2025-09-14 15:01:47 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:01:47 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:01:47 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:01:47 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:01:47 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:01:47 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:01:48 [ERROR]: Failed to generate embeddings
+Metadata: {
+  "error": "Request failed with status code 400",
+  "textCount": 1
+}
+2025-09-14 15:01:48 [WARN]: Using mock embeddings for development
+2025-09-14 15:05:26 [INFO]: Initializing vector database
+Metadata: {
+  "host": "localhost",
+  "port": 8000
+}
+2025-09-14 15:05:26 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async DatabaseSetup.initializeVectorDatabase (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:137:7)
+    at async DatabaseSetup.setup (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:38:7)
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:05:26 [WARN]: Using mock vector database for development
+2025-09-14 15:05:26 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:05:26 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:05:26 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:05:26 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:05:26 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:05:26 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:05:26 [ERROR]: Failed to generate embeddings
+Metadata: {
+  "error": "Request failed with status code 400",
+  "textCount": 1
+}
+2025-09-14 15:05:26 [WARN]: Using mock embeddings for development
+2025-09-14 15:06:34 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 15:06:34 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 20669
+}
+2025-09-14 15:19:37 [INFO]: Initializing vector database
+Metadata: {
+  "host": "localhost",
+  "port": 8000
+}
+2025-09-14 15:19:37 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async DatabaseSetup.initializeVectorDatabase (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:137:7)
+    at async DatabaseSetup.setup (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:38:7)
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:19:37 [WARN]: Using mock vector database for development
+2025-09-14 15:19:37 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:19:37 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:19:37 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:19:37 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:19:37 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:19:37 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:19:38 [ERROR]: Failed to generate embeddings
+Metadata: {
+  "error": "Request failed with status code 400",
+  "textCount": 1
+}
+2025-09-14 15:19:38 [WARN]: Using mock embeddings for development
+2025-09-14 15:19:42 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 15:19:42 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 22563
+}
+2025-09-14 15:19:56 [INFO]: Incoming request
+Metadata: {
+  "method": "POST",
+  "url": "/api/documents/upload",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 15:19:56 [INFO]: Document upload requested
+Metadata: {
+  "filename": "intro-to-it.pdf",
+  "subject": "intro-it",
+  "documentType": "unit_outline",
+  "size": 139915
+}
+2025-09-14 15:19:56 [INFO]: Starting document processing
+Metadata: {
+  "filename": "intro-to-it.pdf",
+  "mimetype": "application/pdf",
+  "size": 139915,
+  "subject": "intro-it"
+}
+2025-09-14 15:19:56 [INFO]: Processed document saved
+Metadata: {
+  "documentId": "58bc693d-95a4-467d-abc1-9f143178f250",
+  "filepath": "/Users/richupromod/Desktop/LessonPlanBuilder/backend/data/processed/58bc693d-95a4-467d-abc1-9f143178f250.json",
+  "size": 139915
+}
+2025-09-14 15:19:56 [INFO]: Operation: document_processed
+Metadata: {
+  "operation": "document_processed",
+  "documentId": "58bc693d-95a4-467d-abc1-9f143178f250",
+  "filename": "intro-to-it.pdf",
+  "subject": "intro-it",
+  "textLength": 29737,
+  "wordCount": 4403,
+  "duration": "71ms"
+}
+2025-09-14 15:19:56 [INFO]: Starting information extraction
+Metadata: {
+  "documentId": "58bc693d-95a4-467d-abc1-9f143178f250",
+  "subject": "intro-it",
+  "textLength": 29737
+}
+2025-09-14 15:19:56 [INFO]: Operation: information_extracted
+Metadata: {
+  "operation": "information_extracted",
+  "documentId": "58bc693d-95a4-467d-abc1-9f143178f250",
+  "subject": "intro-it",
+  "sectionsFound": 6,
+  "outcomesCount": 8,
+  "topicsCount": 11,
+  "duration": "6ms"
+}
+2025-09-14 15:19:56 [INFO]: Initializing vector database
+Metadata: {
+  "host": "localhost",
+  "port": 8000
+}
+2025-09-14 15:19:56 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async VectorDatabase.addDocument (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:169:9)
+    at async /Users/richupromod/Desktop/LessonPlanBuilder/backend/src/api/routes/documents.js:96:24
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:19:56 [WARN]: Using mock vector database for development
+2025-09-14 15:19:56 [ERROR]: Failed to add document to vector database
+Metadata: {
+  "documentId": "58bc693d-95a4-467d-abc1-9f143178f250",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "processingTime": 8
+}
+2025-09-14 15:19:56 [WARN]: Failed to add document to vector database
+Metadata: {
+  "documentId": "58bc693d-95a4-467d-abc1-9f143178f250",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:19:56 [INFO]: Operation: document_uploaded_and_processed
+Metadata: {
+  "operation": "document_uploaded_and_processed",
+  "documentId": "58bc693d-95a4-467d-abc1-9f143178f250",
+  "filename": "intro-to-it.pdf",
+  "subject": "intro-it",
+  "documentType": "unit_outline",
+  "textLength": 29737,
+  "sectionsExtracted": 6,
+  "vectorized": false,
+  "duration": "86ms"
+}
+2025-09-14 15:19:56 [INFO]: HTTP 201 - POST /upload
+Metadata: {
+  "method": "POST",
+  "url": "/upload",
+  "statusCode": 201,
+  "duration": "90ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 15:19:56 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 15:19:56 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 22967
+}
+2025-09-14 15:23:25 [INFO]: Initializing vector database
+Metadata: {
+  "host": "localhost",
+  "port": 8000
+}
+2025-09-14 15:23:25 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async DatabaseSetup.initializeVectorDatabase (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:137:7)
+    at async DatabaseSetup.setup (/Users/richupromod/Desktop/LessonPlanBuilder/backend/scripts/setup_database.js:38:7)
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:23:25 [WARN]: Using mock vector database for development
+2025-09-14 15:23:25 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:23:25 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:23:25 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:23:25 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:23:25 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-data-science",
+  "error": "Collection not found for subject: intro-data-science"
+}
+2025-09-14 15:23:25 [ERROR]: Failed to get collection statistics
+Metadata: {
+  "subject": "intro-statistics",
+  "error": "Collection not found for subject: intro-statistics"
+}
+2025-09-14 15:23:26 [ERROR]: Failed to generate embeddings
+Metadata: {
+  "error": "Request failed with status code 400",
+  "textCount": 1
+}
+2025-09-14 15:23:26 [WARN]: Using mock embeddings for development
+2025-09-14 15:23:56 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 15:23:56 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 23483
+}
+2025-09-14 15:24:37 [INFO]: Incoming request
+Metadata: {
+  "method": "GET",
+  "url": "/api/health",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 15:24:37 [INFO]: Health check requested
+Metadata: {
+  "endpoint": "/health",
+  "status": "healthy",
+  "responseTime": 0
+}
+2025-09-14 15:24:37 [INFO]: HTTP 200 - GET /
+Metadata: {
+  "method": "GET",
+  "url": "/",
+  "statusCode": 200,
+  "duration": "1ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 15:24:44 [INFO]: Incoming request
+Metadata: {
+  "method": "GET",
+  "url": "/api/health",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 15:24:44 [INFO]: Health check requested
+Metadata: {
+  "endpoint": "/health",
+  "status": "healthy",
+  "responseTime": 0
+}
+2025-09-14 15:24:44 [INFO]: HTTP 200 - GET /
+Metadata: {
+  "method": "GET",
+  "url": "/",
+  "statusCode": 200,
+  "duration": "1ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 15:27:00 [INFO]: Incoming request
+Metadata: {
+  "method": "POST",
+  "url": "/api/documents/upload",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 15:27:00 [INFO]: Document upload requested
+Metadata: {
+  "filename": "intro-to-it.pdf",
+  "subject": "intro-it",
+  "documentType": "unit_outline",
+  "size": 139915
+}
+2025-09-14 15:27:00 [INFO]: Starting document processing
+Metadata: {
+  "filename": "intro-to-it.pdf",
+  "mimetype": "application/pdf",
+  "size": 139915,
+  "subject": "intro-it"
+}
+2025-09-14 15:27:00 [INFO]: Processed document saved
+Metadata: {
+  "documentId": "a80430ec-e4a1-43d3-bba4-f122c28e6129",
+  "filepath": "/Users/richupromod/Desktop/LessonPlanBuilder/backend/data/processed/a80430ec-e4a1-43d3-bba4-f122c28e6129.json",
+  "size": 139915
+}
+2025-09-14 15:27:00 [INFO]: Operation: document_processed
+Metadata: {
+  "operation": "document_processed",
+  "documentId": "a80430ec-e4a1-43d3-bba4-f122c28e6129",
+  "filename": "intro-to-it.pdf",
+  "subject": "intro-it",
+  "textLength": 29737,
+  "wordCount": 4403,
+  "duration": "67ms"
+}
+2025-09-14 15:27:00 [INFO]: Starting information extraction
+Metadata: {
+  "documentId": "a80430ec-e4a1-43d3-bba4-f122c28e6129",
+  "subject": "intro-it",
+  "textLength": 29737
+}
+2025-09-14 15:27:00 [INFO]: Operation: information_extracted
+Metadata: {
+  "operation": "information_extracted",
+  "documentId": "a80430ec-e4a1-43d3-bba4-f122c28e6129",
+  "subject": "intro-it",
+  "sectionsFound": 6,
+  "outcomesCount": 8,
+  "topicsCount": 11,
+  "duration": "7ms"
+}
+2025-09-14 15:27:00 [INFO]: Initializing vector database
+Metadata: {
+  "host": "localhost",
+  "port": 8000
+}
+2025-09-14 15:27:00 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async VectorDatabase.addDocument (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:169:9)
+    at async /Users/richupromod/Desktop/LessonPlanBuilder/backend/src/api/routes/documents.js:96:24
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:27:00 [WARN]: Using mock vector database for development
+2025-09-14 15:27:00 [ERROR]: Failed to add document to vector database
+Metadata: {
+  "documentId": "a80430ec-e4a1-43d3-bba4-f122c28e6129",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "processingTime": 6
+}
+2025-09-14 15:27:00 [WARN]: Failed to add document to vector database
+Metadata: {
+  "documentId": "a80430ec-e4a1-43d3-bba4-f122c28e6129",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:27:00 [INFO]: Operation: document_uploaded_and_processed
+Metadata: {
+  "operation": "document_uploaded_and_processed",
+  "documentId": "a80430ec-e4a1-43d3-bba4-f122c28e6129",
+  "filename": "intro-to-it.pdf",
+  "subject": "intro-it",
+  "documentType": "unit_outline",
+  "textLength": 29737,
+  "sectionsExtracted": 6,
+  "vectorized": false,
+  "duration": "80ms"
+}
+2025-09-14 15:27:00 [INFO]: HTTP 201 - POST /upload
+Metadata: {
+  "method": "POST",
+  "url": "/upload",
+  "statusCode": 201,
+  "duration": "84ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 15:27:01 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 15:27:01 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 24532
+}
+2025-09-14 15:27:53 [INFO]: Incoming request
+Metadata: {
+  "method": "POST",
+  "url": "/api/documents/search",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 15:27:53 [INFO]: Document search requested
+Metadata: {
+  "query": "database design principles",
+  "subject": "intro-it",
+  "options": {}
+}
+2025-09-14 15:27:53 [INFO]: Initializing vector database
+Metadata: {
+  "host": "localhost",
+  "port": 8000
+}
+2025-09-14 15:27:53 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async VectorDatabase.search (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:343:9)
+    at async /Users/richupromod/Desktop/LessonPlanBuilder/backend/src/api/routes/documents.js:367:27
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:27:53 [WARN]: Using mock vector database for development
+2025-09-14 15:27:53 [ERROR]: Vector search failed
+Metadata: {
+  "query": "database design principles",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "processingTime": 6
+}
+2025-09-14 15:27:53 [ERROR]: Document search failed
+Metadata: {
+  "query": "database design principles",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "responseTime": 6
+}
+2025-09-14 15:27:53 [WARN]: HTTP 500 - POST /search
+Metadata: {
+  "method": "POST",
+  "url": "/search",
+  "statusCode": 500,
+  "duration": "8ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 15:29:39 [INFO]: Incoming request
+Metadata: {
+  "method": "POST",
+  "url": "/api/documents/search",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 15:29:39 [INFO]: Document search requested
+Metadata: {
+  "query": "History of computing",
+  "subject": "intro-it",
+  "options": {}
+}
+2025-09-14 15:29:39 [ERROR]: Vector search failed
+Metadata: {
+  "query": "History of computing",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "processingTime": 0
+}
+2025-09-14 15:29:39 [ERROR]: Document search failed
+Metadata: {
+  "query": "History of computing",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "responseTime": 1
+}
+2025-09-14 15:29:39 [WARN]: HTTP 500 - POST /search
+Metadata: {
+  "method": "POST",
+  "url": "/search",
+  "statusCode": 500,
+  "duration": "1ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 15:31:18 [INFO]: Incoming request
+Metadata: {
+  "method": "POST",
+  "url": "/api/documents/upload",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 15:31:18 [INFO]: Document upload requested
+Metadata: {
+  "filename": "intro-to-it.pdf",
+  "subject": "intro-it",
+  "documentType": "unit_outline",
+  "size": 139915
+}
+2025-09-14 15:31:18 [INFO]: Starting document processing
+Metadata: {
+  "filename": "intro-to-it.pdf",
+  "mimetype": "application/pdf",
+  "size": 139915,
+  "subject": "intro-it"
+}
+2025-09-14 15:31:18 [INFO]: Processed document saved
+Metadata: {
+  "documentId": "ff4445b5-46ea-4f30-8472-aaa796ad71c6",
+  "filepath": "/Users/richupromod/Desktop/LessonPlanBuilder/backend/data/processed/ff4445b5-46ea-4f30-8472-aaa796ad71c6.json",
+  "size": 139915
+}
+2025-09-14 15:31:18 [INFO]: Operation: document_processed
+Metadata: {
+  "operation": "document_processed",
+  "documentId": "ff4445b5-46ea-4f30-8472-aaa796ad71c6",
+  "filename": "intro-to-it.pdf",
+  "subject": "intro-it",
+  "textLength": 29737,
+  "wordCount": 4403,
+  "duration": "71ms"
+}
+2025-09-14 15:31:18 [INFO]: Starting information extraction
+Metadata: {
+  "documentId": "ff4445b5-46ea-4f30-8472-aaa796ad71c6",
+  "subject": "intro-it",
+  "textLength": 29737
+}
+2025-09-14 15:31:18 [INFO]: Operation: information_extracted
+Metadata: {
+  "operation": "information_extracted",
+  "documentId": "ff4445b5-46ea-4f30-8472-aaa796ad71c6",
+  "subject": "intro-it",
+  "sectionsFound": 6,
+  "outcomesCount": 8,
+  "topicsCount": 11,
+  "duration": "7ms"
+}
+2025-09-14 15:31:18 [ERROR]: Failed to add document to vector database
+Metadata: {
+  "documentId": "ff4445b5-46ea-4f30-8472-aaa796ad71c6",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "processingTime": 0
+}
+2025-09-14 15:31:18 [WARN]: Failed to add document to vector database
+Metadata: {
+  "documentId": "ff4445b5-46ea-4f30-8472-aaa796ad71c6",
+  "error": "Collection not found for subject: intro-it"
+}
+2025-09-14 15:31:18 [INFO]: Operation: document_uploaded_and_processed
+Metadata: {
+  "operation": "document_uploaded_and_processed",
+  "documentId": "ff4445b5-46ea-4f30-8472-aaa796ad71c6",
+  "filename": "intro-to-it.pdf",
+  "subject": "intro-it",
+  "documentType": "unit_outline",
+  "textLength": 29737,
+  "sectionsExtracted": 6,
+  "vectorized": false,
+  "duration": "78ms"
+}
+2025-09-14 15:31:18 [INFO]: HTTP 201 - POST /upload
+Metadata: {
+  "method": "POST",
+  "url": "/upload",
+  "statusCode": 201,
+  "duration": "81ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 15:31:19 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 15:31:19 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 25718
+}
+2025-09-14 15:32:21 [INFO]: Incoming request
+Metadata: {
+  "method": "POST",
+  "url": "/api/documents/search",
+  "ip": "127.0.0.1",
+  "userAgent": "curl/8.7.1"
+}
+2025-09-14 15:32:21 [INFO]: Document search requested
+Metadata: {
+  "query": "database design principles",
+  "subject": "intro-it",
+  "options": {}
+}
+2025-09-14 15:32:21 [INFO]: Initializing vector database
+Metadata: {
+  "host": "localhost",
+  "port": 8000
+}
+2025-09-14 15:32:21 [ERROR]: Failed to initialize vector database
+ChromaConnectionError: Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.
+    at chromaFetch (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4139:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async ChromaClient.heartbeat (/Users/richupromod/Desktop/LessonPlanBuilder/backend/node_modules/chromadb/dist/cjs/chromadb.cjs:4576:22)
+    at async VectorDatabase.initialize (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:39:7)
+    at async VectorDatabase.search (/Users/richupromod/Desktop/LessonPlanBuilder/backend/src/services/vectorDatabase.js:343:9)
+    at async /Users/richupromod/Desktop/LessonPlanBuilder/backend/src/api/routes/documents.js:367:27
+Metadata: {
+  "error": "Failed to connect to chromadb. Make sure your server is running and try again. If you are running from a browser, make sure that your chromadb instance is configured to allow requests from the current origin using the CHROMA_SERVER_CORS_ALLOW_ORIGINS environment variable.",
+  "name": "ChromaConnectionError"
+}
+2025-09-14 15:32:21 [WARN]: Using mock vector database for development
+2025-09-14 15:32:21 [ERROR]: Vector search failed
+Metadata: {
+  "query": "database design principles",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "processingTime": 7
+}
+2025-09-14 15:32:21 [ERROR]: Document search failed
+Metadata: {
+  "query": "database design principles",
+  "subject": "intro-it",
+  "error": "Collection not found for subject: intro-it",
+  "responseTime": 7
+}
+2025-09-14 15:32:21 [WARN]: HTTP 500 - POST /search
+Metadata: {
+  "method": "POST",
+  "url": "/search",
+  "statusCode": 500,
+  "duration": "8ms",
+  "userAgent": "curl/8.7.1",
+  "ip": "127.0.0.1"
+}
+2025-09-14 15:35:47 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 15:35:47 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 26094
+}
+2025-09-14 15:36:03 [INFO]: SIGTERM received, shutting down gracefully
+2025-09-14 15:36:16 [INFO]: Application starting
+Metadata: {
+  "name": "Lesson Plan Builder API",
+  "version": "1.0.0",
+  "environment": "development",
+  "port": 3000
+}
+2025-09-14 15:36:16 [INFO]: Server started successfully
+Metadata: {
+  "port": 3000,
+  "environment": "development",
+  "pid": 26510
+}
